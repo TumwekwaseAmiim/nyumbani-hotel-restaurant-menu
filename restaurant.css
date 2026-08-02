@@ -137,18 +137,21 @@ a {
 
 .hotel-logo {
 
-    width:130px;
+    width:150px;
 
     height:auto;
 
-    margin-bottom:20px;
+    background:#FFF8E7;
 
-    animation:logoFloat 3s infinite ease-in-out;
+    padding:5px;
 
-    filter:drop-shadow(0 10px 20px rgba(0,0,0,.6));
+    border-radius:15px;
+
+    border:2px solid #D4AF37;
+
+    box-shadow:0 5px 18px rgba(212,175,55,0.35);
 
 }
-
 
 
 .home-content h1 {
@@ -255,7 +258,6 @@ transform:translateY(-10px);
 
 }
 
-
 /* =========================================
    CATEGORY NAVIGATION
 ========================================= */
@@ -263,23 +265,39 @@ transform:translateY(-10px);
 
 .category-nav {
 
-    background: white;
+    background:white;
 
-    display: flex;
+    display:flex;
 
-    gap: 12px;
+    gap:12px;
 
-    overflow-x: auto;
+    overflow-x:auto;
 
-    padding: 15px;
+    white-space:nowrap;
 
-    position: sticky;
+    padding:15px;
 
-    top: 0;
+    position:sticky;
 
-    z-index: 100;
+    top:0;
 
-    box-shadow: 0 3px 15px rgba(0,0,0,0.12);
+    z-index:100;
+
+    box-shadow:0 3px 15px rgba(0,0,0,0.12);
+
+    scrollbar-width:none;
+
+    -webkit-overflow-scrolling:touch;
+
+}
+
+
+
+/* HIDE SCROLL BAR */
+
+.category-nav::-webkit-scrollbar {
+
+    display:none;
 
 }
 
@@ -287,21 +305,23 @@ transform:translateY(-10px);
 
 .category-nav a {
 
-    text-decoration: none;
+    flex-shrink:0;
 
-    white-space: nowrap;
+    text-decoration:none;
 
-    background: #7A0019;
+    white-space:nowrap;
 
-    color: white;
+    background:#7A0019;
 
-    padding: 10px 18px;
+    color:white;
 
-    border-radius: 30px;
+    padding:10px 18px;
 
-    font-size: 14px;
+    border-radius:30px;
 
-    transition: 0.3s;
+    font-size:14px;
+
+    transition:0.3s;
 
 }
 
@@ -309,16 +329,25 @@ transform:translateY(-10px);
 
 .category-nav a:hover {
 
-    background: #D4AF37;
+    background:#D4AF37;
 
-    color: #7A0019;
+    color:#7A0019;
 
-    transform: translateY(-3px);
+    transform:translateY(-3px);
 
 }
 
 
 
+/* ACTIVE CATEGORY */
+
+.category-nav a.active {
+
+    background:#D4AF37;
+
+    color:#7A0019;
+
+}
 
 
 /* =========================================
@@ -899,6 +928,9 @@ transform:translateY(-8px);
 
 }
 
+/* =========================================
+   MENU ITEM CARDS
+========================================= */
 
 .menu-item {
 
@@ -906,8 +938,26 @@ transform:translateY(-8px);
 
     border-radius:15px;
 
+    opacity:0;
+
+    transform:translateY(40px);
+
+    transition:all .6s ease;
+
 }
 
+
+.menu-item.show {
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+
+
+/* MENU TEXT */
 
 .menu-item h3 {
 

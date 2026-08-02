@@ -1,28 +1,30 @@
 // =========================================
 // NYUMBANI RESTAURANT DIGITAL MENU JS
+// OPTIMIZED VERSION
 // =========================================
 
 
-// Smooth scrolling for category buttons
+// =========================================
+// SMOOTH SCROLLING FOR CATEGORY BUTTONS
+// =========================================
 
 document.querySelectorAll('.category-nav a').forEach(link => {
 
     link.addEventListener('click', function(e){
 
-        e.preventDefault();
-
         const target = document.querySelector(
             this.getAttribute('href')
         );
 
-
         if(target){
+
+            e.preventDefault();
 
             target.scrollIntoView({
 
-                behavior: "smooth",
+                behavior:"smooth",
 
-                block: "start"
+                block:"start"
 
             });
 
@@ -35,63 +37,53 @@ document.querySelectorAll('.category-nav a').forEach(link => {
 
 
 
-
-
 // =========================================
 // ACTIVE CATEGORY HIGHLIGHT
 // =========================================
-
 
 const sections = document.querySelectorAll('.menu-section');
 
 const navLinks = document.querySelectorAll('.category-nav a');
 
 
-
-window.addEventListener('scroll', () => {
-
+window.addEventListener('scroll', ()=>{
 
     let current = "";
 
 
-
-    sections.forEach(section => {
-
-
-        const sectionTop = section.offsetTop - 120;
+    sections.forEach(section=>{
 
 
-        if(scrollY >= sectionTop){
-
-            current = section.getAttribute('id');
-
-        }
+        const sectionTop = section.offsetTop - 150;
 
 
-    });
+        if(window.scrollY >= sectionTop){
 
-
-
-    navLinks.forEach(link => {
-
-
-        link.classList.remove('active');
-
-
-        if(link.getAttribute('href') === "#" + current){
-
-            link.classList.add('active');
+            current = section.id;
 
         }
 
 
     });
 
+
+
+    navLinks.forEach(link=>{
+
+
+        link.classList.toggle(
+
+            "active",
+
+            link.getAttribute('href') === "#" + current
+
+        );
+
+
+    });
 
 
 });
-
-
 
 
 
@@ -105,29 +97,27 @@ window.addEventListener('scroll', () => {
 const cards = document.querySelectorAll('.menu-item');
 
 
-
 const observer = new IntersectionObserver(
 
 (entries)=>{
 
 
-entries.forEach(entry=>{
+    entries.forEach(entry=>{
 
 
-if(entry.isIntersecting){
+        if(entry.isIntersecting){
 
 
-entry.target.style.opacity = "1";
+            entry.target.classList.add("show");
 
 
-entry.target.style.transform = "translateY(0)";
+            observer.unobserve(entry.target);
 
 
-}
+        }
 
 
-
-});
+    });
 
 
 },
@@ -143,24 +133,11 @@ threshold:0.15
 
 
 
-
 cards.forEach(card=>{
 
-
-card.style.opacity="0";
-
-card.style.transform="translateY(40px)";
-
-card.style.transition="all .6s ease";
-
-
-observer.observe(card);
-
-
+    observer.observe(card);
 
 });
-
-
 
 
 
@@ -174,58 +151,49 @@ observer.observe(card);
 const topButton = document.createElement("button");
 
 
-topButton.innerHTML = "↑";
+topButton.innerHTML="↑";
 
 
-topButton.className = "top-button";
+topButton.className="top-button";
 
 
 document.body.appendChild(topButton);
 
 
 
-
-topButton.style.display="none";
-
-
-
 window.addEventListener("scroll",()=>{
 
 
-if(window.scrollY > 500){
+    if(window.scrollY > 500){
 
-topButton.style.display="block";
+        topButton.style.display="block";
 
+    }
 
-}
+    else{
 
-else{
+        topButton.style.display="none";
 
-topButton.style.display="none";
-
-}
+    }
 
 
 });
-
-
 
 
 
 topButton.addEventListener("click",()=>{
 
 
-window.scrollTo({
+    window.scrollTo({
 
-top:0,
+        top:0,
 
-behavior:"smooth"
+        behavior:"smooth"
+
+    });
+
 
 });
-
-
-});
-
 
 
 
@@ -239,11 +207,11 @@ behavior:"smooth"
 window.addEventListener("load",()=>{
 
 
-console.log(
+    console.log(
 
-"Welcome to Nyumbani Restaurant Digital Menu"
+    "Welcome to Nyumbani Restaurant Digital Menu"
 
-);
+    );
 
 
 });
