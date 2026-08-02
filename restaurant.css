@@ -932,30 +932,17 @@ transform:translateY(-8px);
    MENU ITEM CARDS
 ========================================= */
 
+/* =========================================
+   MENU ITEM CARDS
+========================================= */
+
 .menu-item {
 
     padding:18px;
 
     border-radius:15px;
 
-    opacity:0;
-
-    transform:translateY(40px);
-
-    transition:all .6s ease;
-
 }
-
-
-.menu-item.show {
-
-    opacity:1;
-
-    transform:translateY(0);
-
-}
-
-
 
 /* MENU TEXT */
 
