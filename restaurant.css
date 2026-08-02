@@ -1,0 +1,970 @@
+/* =========================================
+   NYUMBANI RESTAURANT DIGITAL MENU
+   Brand Colors:
+   Burgundy #7A0019
+   Gold     #D4AF37
+   Ivory    #FFF8E7
+========================================= */
+
+/* RESET */
+
+* {
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+
+html {
+
+    scroll-behavior:smooth;
+
+}
+
+
+body {
+
+    font-family:"Poppins", Arial, sans-serif;
+
+    background:#FFF8E7;
+
+    color:#333;
+
+    line-height:1.6;
+
+    overflow-x:hidden;
+
+}
+
+
+a {
+
+    text-decoration:none;
+
+}
+
+
+/* =========================================
+   RESTAURANT LANDING HERO
+========================================= */
+
+
+.menu-home {
+
+    min-height:100vh;
+
+    width:100%;
+
+    position:relative;
+
+    overflow:hidden;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+
+
+.restaurant-image {
+
+    position:absolute;
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    object-position:center;
+
+}
+
+
+
+.home-overlay {
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    linear-gradient(
+        rgba(0,0,0,0.55),
+        rgba(0,0,0,0.75)
+    );
+
+
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:30px;
+
+}
+
+
+
+.home-content {
+
+    position:relative;
+
+    z-index:2;
+
+    text-align:center;
+
+    color:white;
+
+    max-width:650px;
+
+}
+
+/* =========================================
+   LOGO + TEXT STYLING
+========================================= */
+
+
+.hotel-logo {
+
+    width:130px;
+
+    height:auto;
+
+    margin-bottom:20px;
+
+    animation:logoFloat 3s infinite ease-in-out;
+
+    filter:drop-shadow(0 10px 20px rgba(0,0,0,.6));
+
+}
+
+
+
+.home-content h1 {
+
+    font-family:"Playfair Display", serif;
+
+    font-size:48px;
+
+    text-transform:uppercase;
+
+    letter-spacing:3px;
+
+    margin-bottom:15px;
+
+    color:white;
+
+}
+
+
+
+.welcome-text {
+
+    font-size:20px;
+
+    line-height:1.8;
+
+    color:#D4AF37;
+
+    margin-bottom:10px;
+
+}
+
+
+
+
+@keyframes logoFloat {
+
+
+0%,100% {
+
+transform:translateY(0);
+
+}
+
+
+50% {
+
+transform:translateY(-10px);
+
+}
+
+
+}
+
+/* =========================================
+   RESTAURANT INFORMATION CARD
+========================================= */
+
+
+.restaurant-info {
+
+
+    margin-top:35px;
+
+
+    padding:20px 30px;
+
+
+    background:
+
+    rgba(255,255,255,0.12);
+
+
+    backdrop-filter:blur(12px);
+
+
+    border-radius:20px;
+
+
+    border:1px solid rgba(255,255,255,0.25);
+
+
+    box-shadow:
+
+    0 10px 30px rgba(0,0,0,0.3);
+
+
+
+}
+
+
+
+.restaurant-info p {
+
+
+    color:white;
+
+
+    font-size:15px;
+
+
+    margin:8px 0;
+
+
+}
+
+
+/* =========================================
+   CATEGORY NAVIGATION
+========================================= */
+
+
+.category-nav {
+
+    background: white;
+
+    display: flex;
+
+    gap: 12px;
+
+    overflow-x: auto;
+
+    padding: 15px;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 100;
+
+    box-shadow: 0 3px 15px rgba(0,0,0,0.12);
+
+}
+
+
+
+.category-nav a {
+
+    text-decoration: none;
+
+    white-space: nowrap;
+
+    background: #7A0019;
+
+    color: white;
+
+    padding: 10px 18px;
+
+    border-radius: 30px;
+
+    font-size: 14px;
+
+    transition: 0.3s;
+
+}
+
+
+
+.category-nav a:hover {
+
+    background: #D4AF37;
+
+    color: #7A0019;
+
+    transform: translateY(-3px);
+
+}
+
+
+
+
+
+/* =========================================
+   MENU CONTAINER
+========================================= */
+
+
+.menu-container {
+
+    max-width: 900px;
+
+    margin: auto;
+
+    padding: 25px 15px;
+
+}
+
+
+
+
+
+/* =========================================
+   SECTION TITLE
+========================================= */
+
+
+.menu-section {
+
+    margin-bottom: 45px;
+
+    animation: fadeUp 0.8s ease;
+
+}
+
+
+
+.menu-section h2 {
+
+    text-align: center;
+
+    color: #7A0019;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 28px;
+
+    margin-bottom: 10px;
+
+    position: relative;
+
+}
+
+
+
+.menu-section h2::after {
+
+    content: "";
+
+    display: block;
+
+    width: 80px;
+
+    height: 3px;
+
+    background: #D4AF37;
+
+    margin: 12px auto;
+
+}
+
+
+
+
+
+.availability {
+
+    text-align:center;
+
+    color:#777;
+
+    margin-bottom:25px;
+
+}
+
+
+
+
+
+/* =========================================
+   MENU ITEMS
+========================================= */
+
+
+.menu-item {
+
+    background: white;
+
+    margin: 18px 0;
+
+    padding: 22px;
+
+    border-radius: 18px;
+
+    border-left: 6px solid #D4AF37;
+
+    box-shadow:
+
+    0 8px 20px rgba(0,0,0,0.08);
+
+
+    position: relative;
+
+    overflow: hidden;
+
+
+    animation: slideIn 0.7s ease;
+
+
+    transition: all .35s ease;
+
+}
+
+
+
+
+
+.menu-item::before {
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    top:0;
+
+    width:0;
+
+    height:100%;
+
+    background:#7A0019;
+
+    opacity:0.08;
+
+    transition:.4s;
+
+}
+
+
+
+.menu-item:hover::before {
+
+    width:100%;
+
+}
+
+
+
+.menu-item:hover {
+
+    transform: translateY(-6px);
+
+    box-shadow:
+
+    0 15px 30px rgba(122,0,25,0.18);
+
+}
+
+
+
+
+
+.menu-item h3 {
+
+    color:#7A0019;
+
+    font-size:20px;
+
+    margin-bottom:8px;
+
+    font-family:"Playfair Display", serif;
+
+}
+
+
+
+
+
+.menu-item p {
+
+    color:#555;
+
+    font-size:15px;
+
+    margin-bottom:15px;
+
+}
+
+
+
+
+
+.menu-item span {
+
+
+    display:inline-block;
+
+
+    background:#D4AF37;
+
+
+    color:#7A0019;
+
+
+    font-weight:700;
+
+
+    padding:8px 16px;
+
+
+    border-radius:25px;
+
+
+    font-size:15px;
+
+
+    animation: pricePulse 3s infinite;
+
+
+}
+
+
+
+
+
+/* SUB TITLES */
+
+
+.sub-title {
+
+    color:#7A0019;
+
+    text-align:center;
+
+    margin:25px 0;
+
+    font-family:"Playfair Display",serif;
+
+}
+
+
+
+
+
+.note {
+
+    background:#7A0019;
+
+    color:white;
+
+    padding:20px;
+
+    border-radius:15px;
+
+    margin-top:20px;
+
+}
+
+
+
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+
+.menu-footer {
+
+    background:#7A0019;
+
+    color:white;
+
+    text-align:center;
+
+    padding:35px 20px;
+
+    margin-top:40px;
+
+}
+
+
+
+.menu-footer h3 {
+
+    color:#D4AF37;
+
+    font-family:"Playfair Display",serif;
+
+    font-size:24px;
+
+}
+
+
+
+.menu-footer p {
+
+    margin-top:8px;
+
+}
+
+
+
+
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+
+@keyframes fadeUp {
+
+
+from {
+
+opacity:0;
+
+transform:translateY(30px);
+
+}
+
+
+to {
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+
+}
+
+
+
+
+@keyframes slideIn {
+
+
+from {
+
+opacity:0;
+
+transform:translateX(-40px);
+
+}
+
+
+to {
+
+opacity:1;
+
+transform:translateX(0);
+
+}
+
+
+}
+
+
+
+
+@keyframes pricePulse {
+
+
+0%,100% {
+
+transform:scale(1);
+
+}
+
+
+50% {
+
+transform:scale(1.05);
+
+}
+
+
+}
+
+
+
+
+
+@keyframes logoFloat {
+
+
+0%,100% {
+
+transform:translateY(0);
+
+}
+
+
+50% {
+
+transform:translateY(-8px);
+
+}
+
+
+}
+
+
+
+
+
+/* =========================================
+   MOBILE RESPONSIVE
+========================================= */
+
+
+@media(max-width:600px){
+
+
+.menu-header h1 {
+
+font-size:30px;
+
+}
+
+
+.hotel-logo {
+
+width:95px;
+
+}
+
+
+.menu-section h2 {
+
+font-size:24px;
+
+}
+
+
+.menu-item {
+
+padding:18px;
+
+border-radius:15px;
+
+}
+
+
+.menu-item h3 {
+
+font-size:18px;
+
+}
+
+
+.menu-item p {
+
+font-size:14px;
+
+}
+
+
+.category-nav a {
+
+font-size:13px;
+
+padding:9px 14px;
+
+}
+
+
+}
+
+/* =========================================
+   VIEW MENU BUTTON - LUXURY STYLE
+========================================= */
+
+
+.menu-btn {
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:12px;
+
+    margin-top:35px;
+
+    padding:18px 45px;
+
+    background:#D4AF37;
+
+    color:#7A0019;
+
+    text-decoration:none;
+
+    font-size:18px;
+
+    font-weight:700;
+
+    letter-spacing:1px;
+
+    border-radius:50px;
+
+    box-shadow:
+
+    0 0 20px rgba(212,175,55,0.5);
+
+
+    transition:all .4s ease;
+
+    animation:
+
+    buttonPulse 2.5s infinite;
+
+}
+
+
+
+.menu-btn:hover {
+
+    transform:
+
+    translateY(-8px)
+
+    scale(1.05);
+
+
+    background:#fff;
+
+    color:#7A0019;
+
+
+    box-shadow:
+
+    0 15px 40px rgba(212,175,55,0.7);
+
+}
+
+
+
+/* MENU ICON */
+
+.menu-btn::first-letter {
+
+    font-size:25px;
+
+}
+
+
+
+/* BUTTON GLOW ANIMATION */
+
+@keyframes buttonPulse {
+
+
+0%,100%{
+
+    box-shadow:
+
+    0 0 15px rgba(212,175,55,.4);
+
+}
+
+
+50%{
+
+    box-shadow:
+
+    0 0 35px rgba(212,175,55,.9);
+
+}
+
+
+}
+
+/* =========================================
+   MENU PAGE HEADER CENTER FIX
+========================================= */
+
+
+.menu-page-header {
+
+    background:#7A0019;
+
+    color:white;
+
+    padding:25px 20px;
+
+    text-align:center;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+
+
+.menu-page-header .hotel-logo {
+
+    width:80px;
+
+    margin:0 auto 10px auto;
+
+}
+
+
+
+.menu-page-header h1 {
+
+    font-family:"Playfair Display",serif;
+
+    font-size:32px;
+
+    text-transform:uppercase;
+
+    text-align:center;
+
+    margin-bottom:8px;
+
+}
+
+
+
+.menu-page-header p {
+
+    color:#D4AF37;
+
+    font-size:16px;
+
+    text-align:center;
+
+}
+
